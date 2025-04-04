@@ -60,9 +60,6 @@ def delta_analyzer_history(
     else:
         table_path_local = f"{local_path}/Tables/{table_name}"
     delta_table_path = f"{table_path}/_delta_log"
-    print("-"*50)
-    print(delta_table_path)
-    notebookutils.fs.exists(delta_table_path)
 
     files = notebookutils.fs.ls(delta_table_path)
     json_files = [file.name for file in files if file.name.endswith(".json")]
